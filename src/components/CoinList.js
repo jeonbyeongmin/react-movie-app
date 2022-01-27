@@ -19,7 +19,7 @@ function CoinList() {
   };
 
   return (
-    <div className="App">
+    <div>
       <h1>
         Coin converter! ({status === "loading" ? null : data.data.length})
       </h1>

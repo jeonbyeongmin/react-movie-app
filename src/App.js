@@ -1,18 +1,16 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import CoinList from "./CoinList";
-
-const queryClient = new QueryClient();
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Detail from "./pages/Detail";
+import Home from "./pages/Home";
 
 function App() {
-  // const CoinList = React.lazy(() => import("./CoinList"));
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <CoinList />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<Detail />} />
+      </Routes>
+    </Router>
   );
 }
 
